@@ -12,6 +12,7 @@ public class CarDetectorScript : MonoBehaviour {
 
 	public float output;
 	public int numObjects;
+	public float r = 100;
 
 	void Start()
 	{
@@ -26,12 +27,26 @@ public class CarDetectorScript : MonoBehaviour {
 
 	void Update()
 	{
-		// YOUR CODE HERE
-
-		GameObject[] cars = null;
+		GameObject[] cars = GetAllCars();
 		GameObject closestCar = null;
 
+		float min = 1000;
+		foreach (GameObject car in cars) {
+			Vector3 diff = this.transform.position - car.transform.position;
+			float distance = diff.sqrMagnitude;
+			if(distance < min) {
+				min = distance;
+				closestCar = car;
+			}
+		}
+
 		output = 0;
+
+		if (closestCar) {
+			output = 1.0f - 1.0f / (min / r + 1);
+		}
+
+		
 
 
 	}
