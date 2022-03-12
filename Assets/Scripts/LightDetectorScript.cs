@@ -8,7 +8,6 @@ public class LightDetectorScript : MonoBehaviour {
 	public float angle = 360;
 	public bool ApplyThresholds, ApplyLimits;
 	public float MinX, MaxX, MinY, MaxY;
-	public bool inverseEnergy = false; // If true, reverse the energy slope
 	private bool useAngle = true;
 
 	public float output;
@@ -42,14 +41,12 @@ public class LightDetectorScript : MonoBehaviour {
 		{ 
 			//print (1 / (transform.position - light.transform.position).sqrMagnitude);
 			float r = light.GetComponent<Light> ().range;
-			if(inverseEnergy)
-				output += 1.0f - 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
-			else
-				output += 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
-			Debug.DrawLine (transform.position, light.transform.position, Color.red);
+			output += 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
+			// Debug.DrawLine (transform.position, light.transform.position, Color.red);
 		}
 
-		output /= numObjects;
+		if(numObjects != 0)
+			output /= numObjects;
 	
 	}
 
