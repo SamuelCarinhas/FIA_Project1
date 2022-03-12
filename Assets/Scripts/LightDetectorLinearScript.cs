@@ -10,8 +10,21 @@ public class LightDetectorLinearScript : LightDetectorScript {
 
 	public override float GetOutput()
 	{
+		if(ApplyThresholds) {
+			if(output < MinX)
+				return MinY;
+			if(output > MaxX)
+				return MinY;
+		}
+
 		if(inverse)
-			return 1.0f - output;
+			output = 1.0f - output;
+
+		if(ApplyLimits) {
+			output = (float) Math.Min(output, MaxY);
+			output = (float) Math.Max(output, MinY);
+		}
+		
 		return output;
 	}
 
