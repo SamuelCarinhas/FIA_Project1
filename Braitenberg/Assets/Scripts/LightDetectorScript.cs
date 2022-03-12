@@ -5,15 +5,17 @@ using System;
 
 public class LightDetectorScript : MonoBehaviour {
 
-	public float angle=360;
+	public float angle = 360;
 	public bool ApplyThresholds, ApplyLimits;
 	public float MinX, MaxX, MinY, MaxY;
+	public bool inverseEnergy = false; // If true, reverse the energy slope
 	private bool useAngle = true;
 
 	public float output;
 	public int numObjects;
 
-	void Start () {
+	void Start ()
+	{
 		output = 0;
 		numObjects = 0;
 
@@ -22,10 +24,12 @@ public class LightDetectorScript : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+	void Update ()
+	{
 		GameObject[] lights;
 
-		if (useAngle) {
+		if (useAngle)
+		{
 			lights = GetVisibleLights ();
 		} else {
 			lights = GetAllLights ();
@@ -34,12 +38,18 @@ public class LightDetectorScript : MonoBehaviour {
 		output = 0;
 		numObjects = lights.Length;
 	
-		foreach (GameObject light in lights) {
+		foreach (GameObject light in lights)
+		{ 
 			//print (1 / (transform.position - light.transform.position).sqrMagnitude);
 			float r = light.GetComponent<Light> ().range;
-			output += 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
-			//Debug.DrawLine (transform.position, light.transform.position, Color.red);
+			if(inverseEnergy)
+				output += 1.0f - 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
+			else
+				output += 1.0f / ((transform.position - light.transform.position).sqrMagnitude / r + 1);
+			Debug.DrawLine (transform.position, light.transform.position, Color.red);
 		}
+
+		output /= numObjects;
 	
 	}
 
@@ -72,7 +82,7 @@ public class LightDetectorScript : MonoBehaviour {
 			}
 		}
 
-		return (GameObject[])visibleLights.ToArray(typeof(GameObject));
+		return (GameObject[]) visibleLights.ToArray(typeof(GameObject));
 	}
 
 
