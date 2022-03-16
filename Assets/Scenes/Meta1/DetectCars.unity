@@ -3097,7 +3097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6476b914ffbc547fcbe1121d8dba100a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxSpeed: 14
+  MaxSpeed: 20
   RR: {fileID: 1152074976}
   RL: {fileID: 1152064378}
   DetectLights: 0
@@ -4898,6 +4898,7 @@ MonoBehaviour:
   output: 0
   numObjects: 0
   r: 10
+  inverse: 0
 --- !u!114 &7286094414880218126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4911,16 +4912,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 360
-  ApplyThresholds: 0
+  ApplyThresholds: 1
   ApplyLimits: 0
   MinX: 0
-  MaxX: 0
+  MaxX: 0.4
   MinY: 0
   MaxY: 0
-  inverseEnergy: 1
+  inverseEnergy: 0
   output: 0
   numObjects: 0
   r: 10
+  inverse: 1
 --- !u!1 &7540660679987778584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5002,16 +5004,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   angle: 360
-  ApplyThresholds: 0
+  ApplyThresholds: 1
   ApplyLimits: 0
   MinX: 0
-  MaxX: 0
+  MaxX: 0.4
   MinY: 0
   MaxY: 0
-  inverseEnergy: 1
+  inverseEnergy: 0
   output: 0
   numObjects: 0
   r: 10
+  inverse: 1
 --- !u!114 &8175088448852703967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5035,6 +5038,7 @@ MonoBehaviour:
   output: 0
   numObjects: 0
   r: 10
+  inverse: 0
 --- !u!1 &8832093297404055769
 GameObject:
   m_ObjectHideFlags: 0

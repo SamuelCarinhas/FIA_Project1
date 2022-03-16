@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &114209704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6101812135912574356, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
+  m_PrefabInstance: {fileID: 1148516112}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a600c741beed54732aa00e64782cbd1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &136262045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 405622, guid: 5d96f705d64a84afdbff31c21d1f0a9d, type: 3}
@@ -223,15 +234,15 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225651674}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &287976802 stripped
+--- !u!114 &353260562 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3621734815262107767, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1010094822325634599, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
   m_PrefabInstance: {fileID: 1148516112}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a26d17b5f7ae43a1b646ca2e1700458, type: 3}
+  m_Script: {fileID: 11500000, guid: a600c741beed54732aa00e64782cbd1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &712081929
@@ -570,11 +581,11 @@ PrefabInstance:
     - target: {fileID: 11496184, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: LeftLD
       value: 
-      objectReference: {fileID: 287976802}
+      objectReference: {fileID: 353260562}
     - target: {fileID: 11496184, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: RightLD
       value: 
-      objectReference: {fileID: 1280921133}
+      objectReference: {fileID: 114209704}
     - target: {fileID: 11496184, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: MaxSpeed
       value: 10
@@ -666,17 +677,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1280921133 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4352541955692875312, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
-  m_PrefabInstance: {fileID: 1148516112}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a26d17b5f7ae43a1b646ca2e1700458, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1286013830
 GameObject:
   m_ObjectHideFlags: 0

@@ -621,7 +621,7 @@ PrefabInstance:
       objectReference: {fileID: 149228807}
     - target: {fileID: 11496184, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: MaxSpeed
-      value: 300
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1010094822325634599, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: angle
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3621734815262107767, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: mean
-      value: 0.1858
+      value: 0.186
       objectReference: {fileID: 0}
     - target: {fileID: 3621734815262107767, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: angle
@@ -653,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352541955692875312, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: mean
-      value: 0.1858
+      value: 0.186
       objectReference: {fileID: 0}
     - target: {fileID: 4352541955692875312, guid: a094c41ba2a5f421c9090afea1164b25, type: 3}
       propertyPath: angle
