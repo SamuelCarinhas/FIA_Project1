@@ -18,9 +18,11 @@ public class CarBehaviour : MonoBehaviour {
 	public float m_LeftWheelSpeed;
 	public float m_RightWheelSpeed;
 	private float m_axleLength;
+	public GameObject m_Body;
 
 	void Start()
 	{
+		m_Body = this.transform.GetChild(0).gameObject;
 		m_Rigidbody = GetComponent<Rigidbody> ();
 		m_axleLength = (RR.transform.position - RL.transform.position).magnitude;
 	}

@@ -18,7 +18,14 @@ public class CarBehaviour2a : CarBehaviour {
 		if (DetectCars)
         {
 			leftSensor = LeftCD.GetOutput();
-			rightSensor = RightCD.GetOutput(); 
+			if(m_Body.GetComponent<Renderer>())
+				m_Body.GetComponent<Renderer>().material = LeftCD.GetMaterial();
+			rightSensor = RightCD.GetOutput();
+
+			if(leftSensor < rightSensor)
+				rightSensor *= 1.2f;
+			else
+				leftSensor *= 1.2f;
 		}
 		
 

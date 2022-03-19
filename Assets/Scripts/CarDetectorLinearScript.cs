@@ -28,4 +28,9 @@ public class CarDetectorLinearScript : CarDetectorScript {
 		return output;
 	}
 
+	public override Material GetMaterial()
+	{
+		return t_Material;
+	}
+
 }

@@ -10,6 +10,7 @@ public class CarDetectorScript : MonoBehaviour {
 	public float MinX, MaxX, MinY, MaxY;
 	public bool inverseEnergy = false; // If true, reverse the energy slope
 	private bool useAngle = true;
+	public Material t_Material;
 
 	public float output;
 	public int numObjects;
@@ -42,6 +43,8 @@ public class CarDetectorScript : MonoBehaviour {
 		{
 			Vector3 diff = this.transform.position - car.transform.position;
 			float distance = diff.sqrMagnitude;
+			if(distance <= 5f)
+				continue;
 			// Check if the current car is the closest
 			if(distance < min)
 			{
@@ -56,6 +59,9 @@ public class CarDetectorScript : MonoBehaviour {
 		// Only calculate the energy if there is a car to follow
 		if (closestCar)
 		{
+			GameObject gameobject = closestCar.transform.GetChild(0).gameObject;
+			if(gameobject.GetComponent<Renderer>())
+				t_Material = gameobject.GetComponent<Renderer>().material;
 			if(inverseEnergy)
 				output = 1.0f - 1.0f / (min / r + 1);
 			else
@@ -64,6 +70,8 @@ public class CarDetectorScript : MonoBehaviour {
 	}
 
 	public virtual float GetOutput() { throw new NotImplementedException(); }
+
+	public virtual Material GetMaterial() { throw new NotImplementedException(); }
 
 	// Returns all "CarToFollow" tagged objects. The sensor angle is not taken into account.
 	GameObject[] GetAllCars()

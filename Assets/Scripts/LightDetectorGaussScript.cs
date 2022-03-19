@@ -23,8 +23,6 @@ public class LightDetectorGaussScript : LightDetectorScript {
 
 		float mx = 1.0f/(stdDev * (float) Math.Sqrt(2*Math.PI)) * (float) Math.Exp(-0.5f*Math.Pow(0, 2)/(float) Math.Pow(stdDev, 2));
 
-		// output /= mx;
-
 		// output = (stdDev/Mathf.Sqrt(2*Mathf.PI)) * Mathf.Exp(-Mathf.Pow(output-mean, 2) / (2*Mathf.Pow(stdDev, 2)));
 
 		if(inverse)
