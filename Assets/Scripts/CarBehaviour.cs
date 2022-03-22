@@ -18,6 +18,7 @@ public class CarBehaviour : MonoBehaviour {
 	public float m_LeftWheelSpeed;
 	public float m_RightWheelSpeed;
 	private float m_axleLength;
+	// The car body game object
 	public GameObject m_Body;
 
 	void Start()

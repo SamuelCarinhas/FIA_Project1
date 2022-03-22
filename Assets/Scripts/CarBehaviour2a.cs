@@ -22,6 +22,8 @@ public class CarBehaviour2a : CarBehaviour {
 				m_Body.GetComponent<Renderer>().material = LeftCD.GetMaterial();
 			rightSensor = RightCD.GetOutput();
 
+			// This is only to increase the difference between the 2 sensors
+			// Because the car was to far away the difference is almost 0 and he doesn't follow the other cars
 			if(leftSensor < rightSensor)
 				rightSensor *= 1.2f;
 			else

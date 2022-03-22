@@ -13,10 +13,12 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        // Spawn a car every timer seconds
         InvokeRepeating("SpawnCar", timer, timer);
     }
 
     void SpawnCar() {
+        // Spawn the car prefab at the spawner object position
         Instantiate(car, transform.position, Quaternion.identity);
         currentCars++;
         if(currentCars == maxCars) {
